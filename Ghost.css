@@ -1,0 +1,40 @@
+div.GhostElementWrapper {
+    position: relative;
+}
+div.GhostElementWrapper label.ghost {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    cursor: text;
+}
+div.GhostElementWrapper label.ghost.idle {
+    color: #999;
+}
+div.GhostElementWrapper label.ghost.focused {
+    color: #bbb;
+}
+div.GhostElementWrapper label.ghost.inactive {
+/*     display: none; */
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+/* transitions */
+div.GhostElementWrapper label.ghost.idle,
+div.GhostElementWrapper label.ghost.focused {
+    -moz-transition: color,opacity 125ms linear;
+    -webkit-transition: color,opacity 125ms linear;
+    -o-transition: color,opacity 125ms linear;
+    transition: color,opacity 125ms linear;
+/*
+    DOESN'T WORK; blog about the order busting
+    transition: opacity,color 125ms linear;
+*/
+}
+div.GhostElementWrapper label.ghost.inactive {
+    -moz-transition: opacity 125ms linear;
+    -webkit-transition: opacity 125ms linear;
+    -o-transition: opacity 125ms linear;
+    transition: opacity 125ms linear;
+}
