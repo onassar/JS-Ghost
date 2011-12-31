@@ -13,4 +13,6 @@ codebase).
 
     (new Ghost($('input')));
 
-Yup! That&#039;s it :)
+Yup! That&#039;s it :)  
+For a real-life example, check out
+[example.html](https://github.com/onassar/JS-Ghost/blob/master/example.html)
