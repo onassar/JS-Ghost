@@ -19,7 +19,7 @@ var Ghost = new Class({
     /**
      * Implements
      * 
-     * Interfaces to implement (aka extend)
+     * Interfaces to implement (aka extend).
      * 
      * @public
      * @var    Class
@@ -30,7 +30,7 @@ var Ghost = new Class({
      * _input
      * 
      * @protected
-     * @var    HTMLElement
+     * @var       HTMLElement
      */
     _input: {},
 
@@ -38,7 +38,7 @@ var Ghost = new Class({
      * _label
      * 
      * @protected
-     * @var    HTMLElement
+     * @var       HTMLElement
      */
     _label: {},
 
