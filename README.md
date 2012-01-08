@@ -11,7 +11,10 @@ codebase).
 
 ### Instantiation Example
 
-    (new Ghost($('input')));
+``` javascript
+
+(new Ghost($('input')));
+```
 
 Yup! That&#039;s it :)  
 For a real-life example, check out
