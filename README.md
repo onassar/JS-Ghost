@@ -9,6 +9,9 @@ With a brute-simple instantiation, this class doesn&#039;t require much tweaking
 (of which can be done entirely through an additional CSS file to maintain the
 codebase).
 
+A &quot;ghost&quot; value is retrieved, by default, from the input&#039;s title
+attribute value.
+
 ### Instantiation Example
 
 ``` javascript
