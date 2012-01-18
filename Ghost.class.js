@@ -49,10 +49,13 @@ var Ghost = new Class({
      * @var    Object
      */
     options: {
-        focused: 'focused',
-        idle: 'idle',
-        inactive: 'inactive',
-        primary: 'ghost'
+        placeholder: 'title',
+        classes: {
+            focused: 'focused',
+            idle: 'idle',
+            inactive: 'inactive',
+            primary: 'ghost'
+        }
     },
 
     /**
@@ -102,7 +105,7 @@ var Ghost = new Class({
                  * Upon focusing on the input, mark that the label is now also
                  * being focused upon by adding the appropriate class
                  */
-                self._label.addClass(self.options.focused);
+                self._label.addClass(self.options.classes.focused);
             },
             'blur': function(event) {
 
@@ -111,7 +114,7 @@ var Ghost = new Class({
                  * blurred right now, and thus the label is also no longer the
                  * focus)
                  */
-                self._label.removeClass(self.options.focused);
+                self._label.removeClass(self.options.classes.focused);
 
                 // if the input is still (or newly) empty
                 if (this.get('value').length === 0) {
@@ -121,7 +124,7 @@ var Ghost = new Class({
                      * inactive class (which ought only be applied when the
                      * label shoudn't be visible; eg. when there's content)
                      */
-                    self._label.removeClass(self.options.inactive);
+                    self._label.removeClass(self.options.classes.inactive);
                 }
             },
             'keydown': function(event) {
@@ -146,7 +149,7 @@ var Ghost = new Class({
                      * being run in the keydown event, within the condition
                      * which checks against invalid characters being fired)
                      */
-                    self._label.addClass(self.options.inactive);
+                    self._label.addClass(self.options.classes.inactive);
                 }
             }
         });
@@ -162,7 +165,7 @@ var Ghost = new Class({
 
         // create label; store input value in DOM property
         this._label = (new Element('label'));
-        this._label.set('text', this._input.get('title'));
+        this._label.set('text', this._input.get(this.options.placeholder));
 
         /**
          * Create wrapper (for reasoning behind this approach, see class notes
@@ -173,14 +176,14 @@ var Ghost = new Class({
         wrapper.adopt(this._label);
 
         // add the primary and idle class (upon instantiation)
-        this._label.addClass(this.options.primary);
-        this._label.addClass(this.options.idle);
+        this._label.addClass(this.options.classes.primary);
+        this._label.addClass(this.options.classes.idle);
 
         // if the input has a value
         if (this._input.get('value') !== '') {
 
             // make the label active
-            this._label.addClass(this.options.inactive);
+            this._label.addClass(this.options.classes.inactive);
         }
 
         // grab all styles that would affect the labels visuals and position
