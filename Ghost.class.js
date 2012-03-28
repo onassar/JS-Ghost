@@ -189,18 +189,28 @@ var Ghost = new Class({
         // grab all styles that would affect the labels visuals and position
         var styles = this._input.getStyles(
             'font-family', 'font-size',
-            'padding', 'margin',
+            'padding-top',
+            'padding-right',
+            'padding-bottom',
+            'padding-left',
+            'margin',
             'height', 'line-height', 'width',
             'border-top-width', 'border-right-width',
             'border-bottom-width', 'border-left-width'
         );
+
+        // padding formatting
+        styles['padding-left'] = styles['padding-left'].toInt() + 1 + 'px';
 
         // set the label's visual and position styles
         this._label.setStyles({
             'font-family': styles['font-family'],
             'font-size': styles['font-size'],
 
-            'padding': styles['padding'],
+            'padding-top': styles['padding-top'],
+            'padding-right': styles['padding-right'],
+            'padding-bottom': styles['padding-bottom'],
+            'padding-left': styles['padding-left'],
             'margin': styles['margin'],
 
             'height': styles['height'],
