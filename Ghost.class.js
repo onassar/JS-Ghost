@@ -5,14 +5,14 @@
  * MooTools based class which provides the ability to overlay a label on top of
  * an input field. Benefits includes a cleaner, more direct, user interface.
  * 
- * @author Oliver Nassar <onassar@gmail.com>
- * @notes  Class uses the approach of wrapping the input in a wrapper, along
- *         with the label to allow for variability in the user experience.
- *         Otherwise, if the label were set absolutely, and DOM elements above
- *         it appeared, changed heighted, or animated, the label would remain in
- *         the absolute position it was directed to upon instantiation.
- * @public
- * @var    Class
+ * @author     Oliver Nassar <onassar@gmail.com>
+ * @notes      Class uses the approach of wrapping the input in a wrapper, along
+ *             with the label to allow for variability in the user experience.
+ *             Otherwise, if the label were set absolutely, and DOM elements
+ *             above it appeared, changed heighted, or animated, the label would
+ *             remain in the absolute position it was directed to upon
+ *             instantiation.
+ * @implements Options
  */
 var Ghost = new Class({
 
