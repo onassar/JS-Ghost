@@ -27,10 +27,6 @@ div.GhostElementWrapper label.ghost.focused {
     -webkit-transition: color,opacity 125ms linear;
     -o-transition: color,opacity 125ms linear;
     transition: color,opacity 125ms linear;
-/*
-    DOESN'T WORK; post about the order busting
-    transition: opacity,color 125ms linear;
-*/
 }
 div.GhostElementWrapper label.ghost.inactive {
     -moz-transition: opacity 125ms linear;
