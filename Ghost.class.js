@@ -165,7 +165,11 @@ var Ghost = new Class({
 
         // create label; store input value in DOM property
         this._label = (new Element('label'));
-        this._label.set('text', this._input.get(this.options.placeholder));
+
+        // ensure placeholder source can be accessed
+        if (this._input.get(this.options.placeholder)) {
+            this._label.set('text', this._input.get(this.options.placeholder));
+        }
 
         /**
          * Create wrapper (for reasoning behind this approach, see class notes
